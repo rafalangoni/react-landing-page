@@ -1,0 +1,9 @@
+.banner{
+
+}
+
+.banner__imagem{
+    object-fit: cover;
+    background-size: contain;
+    width: 100%;
+}
