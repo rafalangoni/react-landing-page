@@ -1,0 +1,12 @@
+.componente-desenho{
+    background-color: #d9f7e9;
+    padding: 2rem;
+    text-align: center;
+}
+
+.componente-desenho h3{
+    border-bottom: 4px solid #57c278;
+    display: inline-block;
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
+}

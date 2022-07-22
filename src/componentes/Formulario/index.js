@@ -6,7 +6,7 @@ import './Formulario.css'
 
 const Formulario = (props) => {
 
-    const listaDesenhos = ['Chaves', 'Chapolin']
+    const listaDesenhos = ['Chaves', 'Chapolin', 'Chespirito']
 
     const [desenho, setDesenho] = useState('');
     const [personagem, setPersonagem] = useState('');
