@@ -25,14 +25,14 @@ function App() {
 
   const [personagens, setPersonagens] = useState([])
 
-  const aoNovopersonagemAdicionado = (personagem) => {
+  const aoNovoPersonagemAdicionado = (personagem) => {
     setPersonagens([...personagens, personagem])
   }
 
   return (
     <div className="App">
       <Banner />
-      <Formulario times={times.map(time => time.nome)} aoPersonagemCadastrado={personagem => aoNovopersonagemAdicionado(personagem)}/>
+      <Formulario times={times.map(time => time.nome)} aoPersonagemCadastrado={personagem => aoNovoPersonagemAdicionado(personagem)}/>
       
       {times.map(time => <Time 
         key={time.nome} 
