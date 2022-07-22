@@ -5,9 +5,6 @@ import ListaSuspensa from '../ListaSuspensa';
 import './Formulario.css'
 
 const Formulario = (props) => {
-
-    const listaDesenhos = ['Chaves', 'Chapolin', 'Chespirito']
-
     const [desenho, setDesenho] = useState('');
     const [personagem, setPersonagem] = useState('');
     const [imagem, setImagem] = useState('');
@@ -21,6 +18,10 @@ const Formulario = (props) => {
             imagem,
             escolhaDesenho
         })
+        setDesenho('')
+        setPersonagem('')
+        setImagem('')
+        setEscolhaDesenho('')
     }
 
     return (
@@ -50,7 +51,7 @@ const Formulario = (props) => {
                 <ListaSuspensa
                     obrigatorio={true}
                     label="Desenho"
-                    itens={listaDesenhos}
+                    itens={props.listaDesenhos}
                     valor={escolhaDesenho}
                     aoAlterado={valor => setEscolhaDesenho(valor)}
                 />
