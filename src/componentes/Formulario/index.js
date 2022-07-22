@@ -5,23 +5,23 @@ import ListaSuspensa from '../ListaSuspensa';
 import './Formulario.css'
 
 const Formulario = (props) => {
-    const [desenho, setDesenho] = useState('');
     const [personagem, setPersonagem] = useState('');
+    const [temporada, setTemporada] = useState('');
     const [imagem, setImagem] = useState('');
-    const [escolhaDesenho, setEscolhaDesenho] = useState('');
+    const [time, setTime] = useState('');
 
     const aoSalvar = (evento) => {
         evento.preventDefault();
         props.aoPersonagemCadastrado({
-            desenho,
             personagem, 
+            temporada,
             imagem,
-            escolhaDesenho
+            time
         })
-        setDesenho('')
         setPersonagem('')
+        setTemporada('')
         setImagem('')
-        setEscolhaDesenho('')
+        setTime('')
     }
 
     return (
@@ -30,17 +30,17 @@ const Formulario = (props) => {
                 <h2>Preencha os dados para criar o card do personagem</h2>
                 <CampoTexto
                     obrigatorio={true}
-                    label="Desenho"
-                    placeholder="(Chaves ou Chapolin)."
-                    valor={desenho}
-                    aoAlterado={valor => setDesenho(valor)}
-                />
-                <CampoTexto
-                    obrigatorio={true}
                     label="Personagem"
                     placeholder="Informe o personagem."
                     valor={personagem}
                     aoAlterado={valor => setPersonagem(valor)}
+                />
+                <CampoTexto
+                    obrigatorio={true}
+                    label="Temporada"
+                    placeholder="Informe a temporada."
+                    valor={temporada}
+                    aoAlterado={valor => setTemporada(valor)}
                 />
                 <CampoTexto
                     label="Imagem"
@@ -50,10 +50,10 @@ const Formulario = (props) => {
                 />
                 <ListaSuspensa
                     obrigatorio={true}
-                    label="Desenho"
-                    itens={props.listaDesenhos}
-                    valor={escolhaDesenho}
-                    aoAlterado={valor => setEscolhaDesenho(valor)}
+                    label="Time"
+                    itens={props.times}
+                    valor={time}
+                    aoAlterado={valor => setTime(valor)}
                 />
                 <Botao>
                     Criar card

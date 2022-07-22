@@ -1,16 +1,16 @@
-.componente-desenho{
+.time {
     padding: 2rem;
     text-align: center;
 }
 
-.componente-desenho h3{
+.time h3{
     border-bottom: 4px solid;
     display: inline-block;
     font-size: 2rem;
     padding-bottom: 0.5rem;
 }
 
-.componente-desenho .personagens{
+.time .personagens{
     display: flex;
     justify-content: space-around;
     margin-top: 2rem;

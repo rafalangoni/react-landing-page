@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import Banner from './componentes/Banner';
 import Formulario from './componentes/Formulario';
-import ComponenteDesenho from './componentes/ListaDesenhos';
+import Time from './componentes/Time';
 
 function App() {
 
-  const listaDesenhos = [
+  const times = [
     {
       nome: 'Chaves',
       corPrimaria: '#A6D157',
@@ -30,15 +30,15 @@ function App() {
   }
   return (
     <div>
-      <Banner/>
-      <Formulario listaDesenhos={listaDesenhos.map(personagem => personagem.nome)} aoPersonagemCadastrado={personagem => aoNovoPersonagemAdicionado(personagem)}/>
+      <Banner />
+      <Formulario times={times.map(time => time.nome)} aoPersonagemCadastrado={personagem => aoNovoPersonagemAdicionado(personagem)}/>
 
-      {listaDesenhos.map(listaDesenhos => <ComponenteDesenho 
-        key={listaDesenhos.nome} 
-        nome={listaDesenhos.nome}
-        corPrimaria={listaDesenhos.corPrimaria}
-        corSecundaria={listaDesenhos.corSecundaria}
-        personagens={personagens.filter(personagem => personagem.listaDesenhos === listaDesenhos.nome)}
+      {times.map(time => <Time
+        key={time.nome} 
+        nome={time.nome}
+        corPrimaria={time.corPrimaria}
+        corSecundaria={time.corSecundaria}
+        personagens={personagens.filter(personagem => personagem.time === time.nome)}
         />)}
     </div>
   );
