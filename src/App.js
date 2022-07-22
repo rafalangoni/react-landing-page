@@ -25,21 +25,23 @@ function App() {
 
   const [personagens, setPersonagens] = useState([])
 
-  const aoNovoPersonagemAdicionado = (personagem) =>{
+  const aoNovopersonagemAdicionado = (personagem) => {
     setPersonagens([...personagens, personagem])
   }
-  return (
-    <div>
-      <Banner />
-      <Formulario times={times.map(time => time.nome)} aoPersonagemCadastrado={personagem => aoNovoPersonagemAdicionado(personagem)}/>
 
-      {times.map(time => <Time
+  return (
+    <div className="App">
+      <Banner />
+      <Formulario times={times.map(time => time.nome)} aoPersonagemCadastrado={personagem => aoNovopersonagemAdicionado(personagem)}/>
+      
+      {times.map(time => <Time 
         key={time.nome} 
-        nome={time.nome}
-        corPrimaria={time.corPrimaria}
-        corSecundaria={time.corSecundaria}
+        nome={time.nome} 
+        corPrimaria={time.corPrimaria} 
+        corSecundaria={time.corSecundaria} 
         personagens={personagens.filter(personagem => personagem.time === time.nome)}
-        />)}
+      />)}   
+
     </div>
   );
 }

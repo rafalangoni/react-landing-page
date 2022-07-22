@@ -1,24 +1,24 @@
-import { useState } from 'react';
-import Botao from '../Botao';
-import CampoTexto from '../CampoTexto';
-import ListaSuspensa from '../ListaSuspensa';
+import { useState } from 'react'
+import Botao from '../Botao'
+import CampoTexto from '../CampoTexto'
+import ListaSuspensa from '../ListaSuspensa'
 import './Formulario.css'
 
 const Formulario = (props) => {
-    const [personagem, setPersonagem] = useState('');
-    const [temporada, setTemporada] = useState('');
-    const [imagem, setImagem] = useState('');
-    const [time, setTime] = useState('');
+    const [nome, setNome] = useState('')
+    const [temporada, setTemporada] = useState('')
+    const [imagem, setImagem] = useState('')
+    const [time, setTime] = useState('')
 
     const aoSalvar = (evento) => {
-        evento.preventDefault();
+        evento.preventDefault()
         props.aoPersonagemCadastrado({
-            personagem, 
+            nome,
             temporada,
             imagem,
             time
         })
-        setPersonagem('')
+        setNome('')
         setTemporada('')
         setImagem('')
         setTime('')
@@ -28,39 +28,39 @@ const Formulario = (props) => {
         <section className="formulario">
             <form onSubmit={aoSalvar}>
                 <h2>Preencha os dados para criar o card do personagem</h2>
-                <CampoTexto
+                <CampoTexto 
                     obrigatorio={true}
                     label="Personagem"
-                    placeholder="Informe o personagem."
-                    valor={personagem}
-                    aoAlterado={valor => setPersonagem(valor)}
+                    placeholder="Informe o personagem" 
+                    valor={nome}
+                    aoAlterado={valor => setNome(valor)}
                 />
                 <CampoTexto
                     obrigatorio={true}
                     label="Temporada"
-                    placeholder="Informe a temporada."
+                    placeholder="Informe a temporada" 
                     valor={temporada}
                     aoAlterado={valor => setTemporada(valor)}
                 />
                 <CampoTexto
                     label="Imagem"
-                    placeholder="Selecione a imagem do personagem."
+                    placeholder="Digite o endereço da imagem" 
                     valor={imagem}
                     aoAlterado={valor => setImagem(valor)}
                 />
                 <ListaSuspensa
                     obrigatorio={true}
-                    label="Time"
+                    label="Time" 
                     itens={props.times}
                     valor={time}
                     aoAlterado={valor => setTime(valor)}
                 />
                 <Botao>
-                    Criar card
+                    Criar Card
                 </Botao>
             </form>
         </section>
-    );
+    )
 }
 
-export default Formulario;
+export default Formulario
